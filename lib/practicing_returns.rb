@@ -1,12 +1,14 @@
 require 'pry'
 
 def hello(array)
-  i = 0
+  i = 
+  collection = [] #this is going to be how we capture the return values into a new array.
   while i < array.length
-    yield(array[i])
+    collection << yield(array[i])
     i += 1
   end
+  collection
 end
 
-
-hello(["Tim", "Tom", "Jim"]) { |name| puts "Hi, #{name}" }
+binding.pry
+hello(["Tim", "Tom", "Jim"]) { |name| "Hi, #{name}" }
